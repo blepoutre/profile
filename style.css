@@ -1,93 +1,122 @@
 @font-face {
-  font-family: NMS;
-  src: url(font-family/geonms-font.ttf) format(truetype);
+  font-family: bariol-light;
+  src: url('font-family/Bariol-Light.otf') format(opentype);
 }
 
-/* Pour les écrans inférieurs à 768px */
-@media (max-width: 768px) {
-  .profil-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 10px;
-  }
+html {
+  background: url('images/couteau-suisse.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-/* Pour les écrans supérieurs à 768px */
-@media (min-width: 769px) and (max-width: 6017px) {
-  .profil-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-  }
-}
-:root {
-  --background-color: rgba(0, 0, 0, 0.1);
-  --title-color: rgb(33, 63, 79)
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 body {
-  background-color: var(--background-color);
   margin: 0;
   padding: 0;
-  display: flexbox;
-  align-items: center;
-  font-family: NMS;
-  line-height: 1rem;
-}
-
-div {
-  box-shadow: inset 0 0 10px rgba(21, 64, 81, 0.6);
-  background-color: rgba(30, 60, 70, .1);
-}
-
-.profil-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 5px;
-  /* Marge entre l'image et les contacts */
   justify-content: center;
+  font-family: bariol-light;
 }
 
-.photo-profil {
-  height: 220px;
-  width: auto;
+.profil {
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
-  margin: 25px 40px;
-  box-shadow: 0 6px 12px rgba(33, 63, 79, 0.6);
+  box-shadow: 0 6px 12px rgba(33, 63, 79, 0.8);
+  margin-top: 25px;
 }
 
-.photo-profil:hover {
-  box-shadow: 0 0 10px lightblue;
+.pulsar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: clignoter 2.5s infinite;
 }
 
-.inline li {
-  position: relative;
-  display: inline;
-  padding: 5px;
-  left: -40px;
-  text-decoration: none;
+@keyframes clignoter {
+  0% {
+    box-shadow: 0 0 24px lightgreen;
+  }
+  50% {
+    box-shadow: 0 0 96px lightgreen;
+  }
+  100% {
+    box-shadow: 0 0 24px lightgreen;
+  }
 }
 
-h2 {
-  color: var(--title-color)
+@keyframes clignoter2 {
+  0% {
+    box-shadow: inset 0 0 24px lightgreen;
+  }
+  50% {
+    box-shadow: inset 0 0 48px lightgreen;
+  }
+  100% {
+    box-shadow: inset 0 0 24px lightgreen;
+  }
+}
+
+h1 {
+  color: white;
 }
 
 p {
-  font-size: 1.2rem;
+  color: white;
+  text-align: justify;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px;
-  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  border-radius:  15px;
+  margin: 15px 25px;
+  padding: 5px 45px;
+  box-shadow: inset 0 0 24px rgba(134, 238, 134, 0.7);
+  color: white;
+  animation: clignoter2 2.5s infinite;
+}
+
+.card h2 {
   text-align: center;
-  padding: 0 40px;
+}
+
+#logo-mjg {
+  height: 1.2rem;
+}
+
+.profil-github {
+  text-decoration: none;
+  margin-top: 20px;
+  color: lightgreen;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  padding: 3px 15px;
+  position: absolute;
+  right: 10vw;
+  top: 85px;
+}
+
+.profil-linkedin {
+  text-decoration: none;
+  margin-top: 20px;
+  color: lightgreen;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  padding: 3px 15px;
+  position: absolute;
+  left: 10vw;
+  top: 85px;
+}
+
+a  {
+  text-decoration: none;
+  color: lightgreen;
 }
